@@ -113,7 +113,7 @@
     <!-- Region Settings flyout window -->
     <Controls:MetroWindow.Flyouts>
         <Controls:FlyoutsControl>
-            <Flyout:SettingsFlyout Position="Right" Header="Settings"/>
+            <Flyout:SettingsFlyout Position="Right" Header="Settings" Height="{Binding ActualHeight, Mode=OneWay}"/>
         </Controls:FlyoutsControl>
     </Controls:MetroWindow.Flyouts>
     <!-- EndRegion -->
