@@ -65,6 +65,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Flyout-Settings - Copy.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Flyout-Settings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -74,6 +82,12 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Colours.cs" />
+    <Compile Include="Flyout-Settings - Copy.xaml.cs">
+      <DependentUpon>Flyout-Settings - Copy.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Flyout-Settings.xaml.cs">
+      <DependentUpon>Flyout-Settings.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -132,6 +146,36 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="AppIcon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ColourTiles\Amber.png" />
+    <Resource Include="Resources\ColourTiles\Blue.png" />
+    <Resource Include="Resources\ColourTiles\Brown.png" />
+    <Resource Include="Resources\ColourTiles\Cobalt.png" />
+    <Resource Include="Resources\ColourTiles\Crimson.png" />
+    <Resource Include="Resources\ColourTiles\Cyan.png" />
+    <Resource Include="Resources\ColourTiles\Dark.png" />
+    <Resource Include="Resources\ColourTiles\Emerald.png" />
+    <Resource Include="Resources\ColourTiles\Green.png" />
+    <Resource Include="Resources\ColourTiles\Indigo.png" />
+    <Resource Include="Resources\ColourTiles\Light.png" />
+    <Resource Include="Resources\ColourTiles\Lime.png" />
+    <Resource Include="Resources\ColourTiles\Magenta.png" />
+    <Resource Include="Resources\ColourTiles\Mauve.png" />
+    <Resource Include="Resources\ColourTiles\Olive.png" />
+    <Resource Include="Resources\ColourTiles\Orange.png" />
+    <Resource Include="Resources\ColourTiles\Pink.png" />
+    <Resource Include="Resources\ColourTiles\Purple.png" />
+    <Resource Include="Resources\ColourTiles\Red.png" />
+    <Resource Include="Resources\ColourTiles\Sienna.png" />
+    <Resource Include="Resources\ColourTiles\Steel.png" />
+    <Resource Include="Resources\ColourTiles\Taupe.png" />
+    <Resource Include="Resources\ColourTiles\Teal.png" />
+    <Resource Include="Resources\ColourTiles\Violet.png" />
+    <Resource Include="Resources\ColourTiles\Yellow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\test.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
