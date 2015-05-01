@@ -1,18 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using MahApps.Metro.Controls;
+﻿using MahApps.Metro.Controls;
+using System;
+using System.Globalization;
+using System.Reflection;
 
 namespace GBClassicConfig.Desktop
 {
@@ -23,7 +12,18 @@ namespace GBClassicConfig.Desktop
     {
         public MainWindow()
         {
+            #region Get version number...
+            Version v = Assembly.GetExecutingAssembly().GetName().Version; // Find version number
+            string Build_Number = string.Format(CultureInfo.InvariantCulture, @"V{0}.{1}.{2} (r{3})", v.Major, v.Minor, v.Build, v.Revision); // Format version number
+            Properties.Settings.Default.Version_Number = Build_Number; // Push version number to settings
+            Properties.Settings.Default.Save(); // Save settings
+            #endregion
+
             InitializeComponent();
+
+            VersionStatus.Content = Properties.Settings.Default.Version_Number; // Add version number to status bar
+            Colours.Change(Properties.Settings.Default.Theme, Properties.Settings.Default.Accent); // Set theme and accent to last used
+       
         }
     }
 }

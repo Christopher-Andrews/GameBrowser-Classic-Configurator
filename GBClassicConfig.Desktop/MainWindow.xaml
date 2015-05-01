@@ -4,6 +4,7 @@
                       xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
                       Title="MainWindow"
                       ShowTitleBar="True"
+                      Icon="/Resources/AppIcon.ico"
                       ShowIconOnTitleBar="True"
                       Height="700"
                       Width="1050"
