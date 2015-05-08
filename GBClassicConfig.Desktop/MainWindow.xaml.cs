@@ -53,7 +53,7 @@ namespace GBClassicConfig.Desktop
         #region - Help button clicked...
 
 
-        internal void HelpButton_Click(object sender, RoutedEventArgs e)
+        private void HelpButton_Click(object sender, RoutedEventArgs e)
         {
             OpenFlyout(1);
         }

@@ -50,8 +50,9 @@ namespace GBClassicConfig.Desktop
 
         private void OptionsText_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            var MainWindow = new MainWindow();
-            MainWindow.HelpButton_Click(sender, e);
+            MainWindow of = new MainWindow();
+            of.OpenFlyout(2);
+            of.Show();
         }
 
         private void HelpText_MouseDown(object sender, MouseButtonEventArgs e)
@@ -60,12 +61,7 @@ namespace GBClassicConfig.Desktop
             System.Diagnostics.Process.Start("http://google.com");
         }
 
-        private void OptionsText_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            MainWindow of = new MainWindow();
-            of.OpenFlyout(2);
-            of.Show();
-        }
+
 
 
     }

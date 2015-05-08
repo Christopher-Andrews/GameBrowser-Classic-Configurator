@@ -43,7 +43,7 @@
     <!-- Region Main UI... -->
     <StackPanel>
         <TextBlock TextWrapping="Wrap" Foreground="#FF8D8D8D" Margin="20,10,10,15" FontSize="15"><Run Text="GameBrowser Classic Configurator"/><LineBreak/><Run Text="By Maleficarum"/></TextBlock>
-        <TextBlock TextWrapping="Wrap" x:Name="OptionsText" Text="     Options*" Foreground="#FFf0f0f0" Margin="0,15" FontSize="15" MouseEnter="MenuOption_MouseEnter" MouseLeave="MenuOption_MouseLeave" MouseLeftButtonDown="OptionsText_MouseLeftButtonDown" MouseDown="OptionsText_MouseDown"/>
+        <TextBlock TextWrapping="Wrap" x:Name="OptionsText" Text="     Options*" Foreground="#FFf0f0f0" Margin="0,15" FontSize="15" MouseEnter="MenuOption_MouseEnter" MouseLeave="MenuOption_MouseLeave" MouseLeftButtonDown="OptionsText_MouseLeftButtonDown"/>
         <TextBlock TextWrapping="Wrap" x:Name="HelpText" Text="     Help" Foreground="#FFf0f0f0" Margin="0,15,0,15" FontSize="15" MouseEnter="MenuOption_MouseEnter" MouseLeave="MenuOption_MouseLeave" MouseDown="HelpText_MouseDown"/>
         <TextBlock TextWrapping="Wrap" x:Name="AboutText" Text="     About*" Foreground="#FFf0f0f0" Margin="0,15" FontSize="15" MouseEnter="MenuOption_MouseEnter" MouseLeave="MenuOption_MouseLeave"/>
 
