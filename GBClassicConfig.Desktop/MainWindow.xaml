@@ -3,13 +3,15 @@
                       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                       xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
                       xmlns:Flyout="clr-namespace:GBClassicConfig.Desktop"
+                      xmlns:Pages="clr-namespace:GBClassicConfig.Desktop.Pages"
                       Title="MainWindow"
                       ShowTitleBar="True"
                       Icon="/Resources/AppIcon.ico"
                       ShowIconOnTitleBar="True"
                       Height="700"
-                      Width="1050"
+                      Width="1089"
                       GlowBrush="{DynamicResource AccentColorBrush}"
+                      NonActiveGlowBrush="Red"
                       WindowStartupLocation="CenterScreen"
                       RightWindowCommandsOverlayBehavior="Never"
                       WindowButtonCommandsOverlayBehavior="Never">
@@ -50,7 +52,7 @@
             </Button>
             <!-- EndRegion -->
             <!-- Region Help Button... -->
-            <Button x:Name="HelpButton" >
+            <Button x:Name="HelpButton" Click="HelpButton_Click">
                 <StackPanel Orientation="Horizontal">
                     <Rectangle Width="20" Height="20" Fill="{Binding Foreground, RelativeSource={RelativeSource AncestorType={x:Type Button}}}">
                         <Rectangle.OpacityMask>
@@ -76,24 +78,38 @@
             </Grid.RowDefinitions>
 
             <!-- Region Menu headers... -->
-            <Controls:MetroAnimatedSingleRowTabControl Grid.Row="1" x:Name="MainTabControl" Margin="22,0,22,0">
+            <Controls:MetroAnimatedSingleRowTabControl Grid.Row="1" x:Name="MainTabControl" Margin="20,0,20,0">
                 <!-- Region Emulators... -->
                 <TabItem Header="Emulator Games">
+                    <Pages:Emulators DataContext="{Binding}" />
                 </TabItem>
                 <!-- EndRegion -->
 
                 <!-- Region Windows... -->
                 <TabItem Header="Windows Games">
+                    <Pages:Windows DataContext="{Binding}" />
                 </TabItem>
                 <!-- EndRegion -->
 
                 <!-- Region DOS... -->
                 <TabItem Header="DOS Games">
+                    <Pages:DOS DataContext="{Binding}" />
+
                 </TabItem>
                 <!-- EndRegion -->
 
                 <!-- Region Miscelaneous... -->
                 <TabItem Header="Miscelaneous">
+                </TabItem>
+                <!-- EndRegion -->
+
+                <!-- Region Option 5... -->
+                <TabItem Header="Option 5">
+                </TabItem>
+                <!-- EndRegion -->
+
+                <!-- Region Option 6... -->
+                <TabItem Header="Reporting">
                 </TabItem>
                 <!-- EndRegion -->
             </Controls:MetroAnimatedSingleRowTabControl>
@@ -103,21 +119,23 @@
             <StatusBar x:Name="StatusBar" Grid.Row="2">
                 <StatusBarItem Content="Selected Tab:"/>
                 <StatusBarItem Content="{Binding SelectedItem.Header, ElementName=MainTabControl, Mode=OneWay}" />
-                <StatusBarItem x:Name="VersionStatus" HorizontalAlignment="Right" Content="** Version text goes here **"/>
+                <StatusBarItem x:Name="FlyoutTrigger" HorizontalAlignment="Right" Content="** FlyoutTrigger **" MouseEnter="VersionStatus_MouseEnter"/>
             </StatusBar>
             <!-- EndRegion -->
         </Grid>
     </Controls:MetroContentControl>
     <!-- EndRegion -->
 
-    <!-- Region Settings flyout window -->
-    <Controls:MetroWindow.Flyouts>
-        <Controls:FlyoutsControl>
-            <Flyout:SettingsFlyout Position="Right" Header="Settings" Height="{Binding ActualHeight, Mode=OneWay}"/>
-        </Controls:FlyoutsControl>
-    </Controls:MetroWindow.Flyouts>
+    <!-- Region Flyout window definitions... -->
+
     <!-- EndRegion -->
 
-
+    <Controls:MetroWindow.Flyouts>
+        <Controls:FlyoutsControl >
+            <Flyout:MainFlyout Position="Right" Height="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=Controls:MetroWindow}, Path=ActualHeight}" Width="260"/>
+            <Flyout:OptionsFlyout Position="Right" Height="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=Controls:MetroWindow}, Path=ActualHeight}" Width="260" Theme="Accent"/>
+            <Flyout:TestFlyout Position="Right" Height="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=Controls:MetroWindow}, Path=ActualHeight}" Width="260" Theme="Accent"/>
+        </Controls:FlyoutsControl>
+    </Controls:MetroWindow.Flyouts>
 
 </Controls:MetroWindow>

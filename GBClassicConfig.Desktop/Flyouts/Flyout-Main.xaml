@@ -1,0 +1,55 @@
+﻿<controls:Flyout x:Class="GBClassicConfig.Desktop.MainFlyout"
+                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+                 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                 xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+                 mc:Ignorable="d" 
+                 d:DesignHeight="700"
+                 d:DesignWidth="260"
+                 x:Name="mainFlyout"
+                 Position="Right"
+                 Header="Settings"
+                 CloseCommand="{Binding ElementName=mainFlyout, Path=CloseCmd}" Background="#FF272727"
+                 >
+
+
+    <!-- Region Flyout resources... -->
+    <controls:Flyout.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.ListView.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/FlatSlider.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <!-- Region For testing... -->
+            <SolidColorBrush x:Key="ListViewBackground" Color="PaleGoldenrod" />
+
+            <Style x:Key="CustomListViewItemStyle" TargetType="{x:Type ListViewItem}" BasedOn="{StaticResource MetroListViewItem}">
+                <Setter Property="Foreground" Value="Black" />
+            </Style>
+
+            <Style x:Key="CustomGridViewColumnHeader" TargetType="{x:Type GridViewColumnHeader}" BasedOn="{StaticResource MetroGridViewColumnHeader}">
+                <Style.Resources>
+                    <SolidColorBrush x:Key="GrayBrush8" Color="#FFE0E0E0" />
+                </Style.Resources>
+                <Setter Property="Foreground" Value="Black" />
+            </Style>
+            <!-- EndRegion -->
+        </ResourceDictionary>
+    </controls:Flyout.Resources>
+    <!-- EndRegion -->
+
+    <!-- Region Main UI... -->
+    <StackPanel>
+        <TextBlock TextWrapping="Wrap" Foreground="#FF8D8D8D" Margin="20,10,10,15" FontSize="15"><Run Text="GameBrowser Classic Configurator"/><LineBreak/><Run Text="By Maleficarum"/></TextBlock>
+        <TextBlock TextWrapping="Wrap" x:Name="OptionsText" Text="     Options*" Foreground="#FFf0f0f0" Margin="0,15" FontSize="15" MouseEnter="MenuOption_MouseEnter" MouseLeave="MenuOption_MouseLeave" MouseLeftButtonDown="OptionsText_MouseLeftButtonDown" MouseDown="OptionsText_MouseDown"/>
+        <TextBlock TextWrapping="Wrap" x:Name="HelpText" Text="     Help" Foreground="#FFf0f0f0" Margin="0,15,0,15" FontSize="15" MouseEnter="MenuOption_MouseEnter" MouseLeave="MenuOption_MouseLeave" MouseDown="HelpText_MouseDown"/>
+        <TextBlock TextWrapping="Wrap" x:Name="AboutText" Text="     About*" Foreground="#FFf0f0f0" Margin="0,15" FontSize="15" MouseEnter="MenuOption_MouseEnter" MouseLeave="MenuOption_MouseLeave"/>
+
+    </StackPanel>
+    <!-- end region-->
+
+        
+
+</controls:Flyout>

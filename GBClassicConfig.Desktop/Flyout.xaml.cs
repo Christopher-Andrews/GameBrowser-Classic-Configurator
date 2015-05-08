@@ -22,7 +22,7 @@ namespace GBClassicConfig.Desktop
     /// <summary>
     /// Interaction logic for Flyout_Settings.xaml
     /// </summary>
-    public partial class SettingsFlyout : Flyout, INotifyPropertyChanged
+    public partial class TestFlyout : Flyout, INotifyPropertyChanged
     {
         # region Only here so build is happy...
         public event PropertyChangedEventHandler PropertyChanged;
@@ -34,7 +34,7 @@ namespace GBClassicConfig.Desktop
         public int SelectedItem;
         #endregion
 
-        public SettingsFlyout()
+        public TestFlyout()
         {
             InitializeComponent();
             VersionText.Text = GBClassicConfig.Desktop.Properties.Settings.Default.Version_Number + " (" + GBClassicConfig.Desktop.Properties.Settings.Default.Version_Name + ")";

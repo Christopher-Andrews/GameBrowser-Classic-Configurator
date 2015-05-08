@@ -65,7 +65,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="Flyout-Settings.xaml">
+    <Page Include="Flyouts\Flyout-Main.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Flyouts\Flyout-Test.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Flyouts\Flyout-Options.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -77,20 +85,57 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Classes\Flyouts.cs" />
+    <Compile Include="Classes\Games.cs" />
     <Compile Include="Colours.cs" />
-    <Compile Include="Flyout-Settings.xaml.cs">
-      <DependentUpon>Flyout-Settings.xaml</DependentUpon>
+    <Compile Include="Flyouts\Flyout-Main.xaml.cs">
+      <DependentUpon>Flyout-Main.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Flyouts\Flyout-Test.xaml.cs">
+      <DependentUpon>Flyout-Test.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Flyouts\Flyout-Options.xaml.cs">
+      <DependentUpon>Flyout-Options.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FlyoutToggle.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\Page-DOS.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Page-Windows.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Page-Emulators.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\Page-Test.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Resources\Icons.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Pages\Page-DOS.xaml.cs">
+      <DependentUpon>Page-DOS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Page-Windows.xaml.cs">
+      <DependentUpon>Page-Windows.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Page-Emulators.xaml.cs">
+      <DependentUpon>Page-Emulators.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Page-Test.xaml.cs">
+      <DependentUpon>Page-Test.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -123,19 +168,19 @@
     <Resource Include="Resources\AppIcon.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Toast-Genesis.png" />
+    <Resource Include="Resources\Toast Icons\Toast-Genesis.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Toast-Mame.png" />
+    <Resource Include="Resources\Toast Icons\Toast-Mame.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Toast-Me.png" />
+    <Resource Include="Resources\Toast Icons\Toast-Me.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Toast-Megadrive.png" />
+    <Resource Include="Resources\Toast Icons\Toast-Megadrive.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Toast-Playstation.png" />
+    <Resource Include="Resources\Toast Icons\Toast-Playstation.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="AppIcon.ico" />
@@ -168,7 +213,16 @@
     <Resource Include="Resources\ColourTiles\Yellow.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\test.ico" />
+    <Resource Include="Resources\Excellence.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Platforms\Platforms-Emulator.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Platforms\Platforms-Windows.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Platforms\Platforms-DOS.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

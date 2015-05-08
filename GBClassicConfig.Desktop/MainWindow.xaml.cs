@@ -1,4 +1,5 @@
 ﻿using MahApps.Metro.Controls;
+using MahApps.Metro.Controls.Dialogs;
 using System;
 using System.Globalization;
 using System.Reflection;
@@ -9,8 +10,10 @@ namespace GBClassicConfig.Desktop
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : MetroWindow
+    public partial class MainWindow
     {
+
+
         public MainWindow()
         {
             #region - Get version number...
@@ -22,13 +25,13 @@ namespace GBClassicConfig.Desktop
 
             InitializeComponent();
 
-            VersionStatus.Content = Properties.Settings.Default.Version_Number; // Add version number to status bar
             Colours.Change(Properties.Settings.Default.Theme, Properties.Settings.Default.Accent); // Set theme and accent to last used
        
         }
 
+
         #region - Open / close flyout...
-        private void ToggleFlyout(int index)
+        public void ToggleFlyout(int index)
         {
             var flyout = this.Flyouts.Items[index] as Flyout;
             if (flyout == null)
@@ -43,9 +46,29 @@ namespace GBClassicConfig.Desktop
         #region - Settings button clicked...
         private void SettingsButton_Click(object sender, RoutedEventArgs e)
         {
-            ToggleFlyout(0); // Open flyout
+            ToggleFlyout(1); // Open flyout
         }
         #endregion
+
+        #region - Help button clicked...
+
+
+        internal void HelpButton_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFlyout(1);
+        }
+        #endregion
+
+        private void VersionStatus_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+            OpenFlyout(0); // Open flyout
+        }
+
+
+        public void OpenFlyout(int flyout)
+        {
+            ToggleFlyout(flyout);
+        }
 
     }
 }

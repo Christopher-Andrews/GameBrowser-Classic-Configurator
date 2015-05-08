@@ -1,0 +1,48 @@
+﻿<controls:Flyout x:Class="GBClassicConfig.Desktop.TestFlyout"
+                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+                 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                 xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+                 mc:Ignorable="d" 
+                 d:DesignHeight="700"
+                 d:DesignWidth="260"
+                 x:Name="testFlyout"
+                 Position="Right"
+                 Header="Test"
+                 CloseCommand="{Binding ElementName=testFlyout, Path=CloseCmd}" Background="#FF272727"
+                 >
+
+
+    <!-- Region Flyout resources... -->
+    <controls:Flyout.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.ListView.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/FlatSlider.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <!-- Region For testing... -->
+            <SolidColorBrush x:Key="ListViewBackground" Color="PaleGoldenrod" />
+
+            <Style x:Key="CustomListViewItemStyle" TargetType="{x:Type ListViewItem}" BasedOn="{StaticResource MetroListViewItem}">
+                <Setter Property="Foreground" Value="Black" />
+            </Style>
+
+            <Style x:Key="CustomGridViewColumnHeader" TargetType="{x:Type GridViewColumnHeader}" BasedOn="{StaticResource MetroGridViewColumnHeader}">
+                <Style.Resources>
+                    <SolidColorBrush x:Key="GrayBrush8" Color="#FFE0E0E0" />
+                </Style.Resources>
+                <Setter Property="Foreground" Value="Black" />
+            </Style>
+            <!-- EndRegion -->
+        </ResourceDictionary>
+    </controls:Flyout.Resources>
+    <!-- EndRegion -->
+
+    <StackPanel Background="White">
+
+    </StackPanel>
+
+
+</controls:Flyout>

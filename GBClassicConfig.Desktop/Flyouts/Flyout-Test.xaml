@@ -1,0 +1,255 @@
+﻿<controls:Flyout x:Class="GBClassicConfig.Desktop.TestFlyout"
+                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+                 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                 xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+                 mc:Ignorable="d" 
+                 d:DesignHeight="700"
+                 d:DesignWidth="260"
+                 x:Name="testFlyout"
+                 Position="Right"
+                 Header="Test"
+                 CloseCommand="{Binding ElementName=testFlyout, Path=CloseCmd}" Background="#FF272727"
+                 >
+
+
+    <!-- Region Flyout resources... -->
+    <controls:Flyout.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.ListView.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/FlatSlider.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <!-- Region For testing... -->
+            <SolidColorBrush x:Key="ListViewBackground" Color="PaleGoldenrod" />
+
+            <Style x:Key="CustomListViewItemStyle" TargetType="{x:Type ListViewItem}" BasedOn="{StaticResource MetroListViewItem}">
+                <Setter Property="Foreground" Value="Black" />
+            </Style>
+
+            <Style x:Key="CustomGridViewColumnHeader" TargetType="{x:Type GridViewColumnHeader}" BasedOn="{StaticResource MetroGridViewColumnHeader}">
+                <Style.Resources>
+                    <SolidColorBrush x:Key="GrayBrush8" Color="#FFE0E0E0" />
+                </Style.Resources>
+                <Setter Property="Foreground" Value="Black" />
+            </Style>
+            <!-- EndRegion -->
+        </ResourceDictionary>
+    </controls:Flyout.Resources>
+    <!-- EndRegion -->
+
+    <!-- Region Main UI... -->
+    <StackPanel Background="White">
+        <!-- Visual settings header... -->
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" FontSize="20" Foreground="Black" Width="240" Height="30" Background="#FFF300FF" Text="Visual Settings" Margin="10,10,10,7.5"/>
+
+        <!-- Region Themes... -->
+        <!-- Themes header... --><TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Themes" FontSize="14" Foreground="Black" Width="240" Height="21" Background="#FFF300FF" Margin="10,7.5,10,2.5"/>
+        <!-- Region Theme selector...-->
+        <WrapPanel Orientation="Horizontal" Background="#FFE5E5E5" HorizontalAlignment="Left" Width="240" Height="30" Margin="10,2.5,10,0">
+            <!-- Region Light...-->
+            <controls:Tile x:Name="ThemeTile1" Click="ThemeTile_Click" Width="20" Height="20" x:Uid="0" ToolTip="Light">
+                <controls:Tile.Background>
+                    <ImageBrush ImageSource="/Resources/ColourTiles/Light.png"/>
+                </controls:Tile.Background>
+            </controls:Tile>
+            <!-- EndRegion -->
+            <!-- Region Dark...-->
+            <controls:Tile x:Name="ThemeTile2" Click="ThemeTile_Click" Width="20" Height="20" x:Uid="1" ToolTip="Dark">
+                <controls:Tile.Background>
+                    <ImageBrush ImageSource="/Resources/ColourTiles/Dark.png"/>
+                </controls:Tile.Background>
+            </controls:Tile>
+        <!-- EndRegion -->
+        </WrapPanel>
+        <!-- EndRegion -->
+        <!-- EndRegion -->
+
+        <!-- Region Accents... -->
+        <!-- Accents header... --><TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Accents" FontSize="14" Foreground="Black" Width="240" Height="20" VerticalAlignment="Top" Background="#FFF300FF" Margin="10,7.5,10,2.5"/>
+        <!-- Region Accent selector... -->
+        <WrapPanel Background="#FFE5E5E5" Orientation="Vertical" Height="80" Margin="10,2.5,10,7.5">
+            <!-- Region Amber... -->
+            <controls:Tile x:Name="Tile1" Click="AccentTile_Click" Width="20" Height="20" x:Uid="0" ToolTip="Amber">
+                <controls:Tile.Background>
+                    <ImageBrush ImageSource="/Resources/ColourTiles/Amber.png"/>
+                </controls:Tile.Background>
+            </controls:Tile>
+            <!-- EndRegion -->
+            <!-- Region Blue... -->
+            <controls:Tile x:Name="Tile2" Click="AccentTile_Click" Width="20" Height="20" x:Uid="1" ToolTip="Blue">
+                <controls:Tile.Background>
+                    <ImageBrush ImageSource="/Resources/ColourTiles/Blue.png"/>
+                </controls:Tile.Background>
+            </controls:Tile>
+            <!-- EndRegion -->
+            <!-- Region Brown... -->
+            <controls:Tile x:Name="Tile3" Click="AccentTile_Click" Width="20" Height="20" x:Uid="2" ToolTip="Brown">
+                <controls:Tile.Background>
+                    <ImageBrush ImageSource="/Resources/ColourTiles/Brown.png"/>
+                </controls:Tile.Background>
+            </controls:Tile>
+            <!-- EndRegion -->
+            <!-- Region Cobalt... -->
+            <controls:Tile x:Name="Tile4" Click="AccentTile_Click" Width="20" Height="20" x:Uid="3" ToolTip="Cobalt">
+                <controls:Tile.Background>
+                    <ImageBrush ImageSource="/Resources/ColourTiles/Cobalt.png"/>
+                </controls:Tile.Background>
+            </controls:Tile>
+            <!-- EndRegion -->
+            <!-- Region Crimson... -->
+            <controls:Tile x:Name="Tile5" Click="AccentTile_Click" Width="20" Height="20" x:Uid="4" ToolTip="Crimson">
+                <controls:Tile.Background>
+                    <ImageBrush ImageSource="/Resources/ColourTiles/Crimson.png"/>
+                </controls:Tile.Background>
+            </controls:Tile>
+            <!-- EndRegion -->
+            <!-- Region Cyan... -->
+            <controls:Tile x:Name="Tile6" Click="AccentTile_Click" Width="20" Height="20" x:Uid="5" ToolTip="Cyan">
+                <controls:Tile.Background>
+                    <ImageBrush ImageSource="/Resources/ColourTiles/Cyan.png"/>
+                </controls:Tile.Background>
+            </controls:Tile>
+            <!-- EndRegion -->
+            <!-- Region Emerald... -->
+            <controls:Tile x:Name="Tile7" Click="AccentTile_Click" Width="20" Height="20" x:Uid="6" ToolTip="Emerald">
+                <controls:Tile.Background>
+                    <ImageBrush ImageSource="/Resources/ColourTiles/Emerald.png"/>
+                </controls:Tile.Background>
+            </controls:Tile>
+            <!-- EndRegion -->
+            <!-- Region Green... -->
+            <controls:Tile x:Name="Tile8" Click="AccentTile_Click" Width="20" Height="20" x:Uid="7" ToolTip="Green">
+                <controls:Tile.Background>
+                    <ImageBrush ImageSource="/Resources/ColourTiles/Green.png"/>
+                </controls:Tile.Background>
+            </controls:Tile>
+            <!-- EndRegion -->
+            <!-- Region Indigo... -->
+            <controls:Tile x:Name="Tile9" Click="AccentTile_Click" Width="20" Height="20" x:Uid="8" ToolTip="Indigo">
+                <controls:Tile.Background>
+                    <ImageBrush ImageSource="/Resources/ColourTiles/Indigo.png"/>
+                </controls:Tile.Background>
+            </controls:Tile>
+            <!-- EndRegion -->
+            <!-- Region Lime... -->
+            <controls:Tile x:Name="Tile10" Click="AccentTile_Click" Width="20" Height="20" x:Uid="9" ToolTip="Lime">
+                <controls:Tile.Background>
+                    <ImageBrush ImageSource="/Resources/ColourTiles/Lime.png"/>
+                </controls:Tile.Background>
+            </controls:Tile>
+            <!-- EndRegion -->
+            <!-- Region Magenta... -->
+            <controls:Tile x:Name="Tile11" Click="AccentTile_Click" Width="20" Height="20" x:Uid="10" ToolTip="Magenta">
+                <controls:Tile.Background>
+                    <ImageBrush ImageSource="/Resources/ColourTiles/Magenta.png"/>
+                </controls:Tile.Background>
+            </controls:Tile>
+            <!-- EndRegion -->
+            <!-- Region Mauve... -->
+            <controls:Tile x:Name="Tile12" Click="AccentTile_Click" Width="20" Height="20" x:Uid="11" ToolTip="Mauve">
+                <controls:Tile.Background>
+                    <ImageBrush ImageSource="/Resources/ColourTiles/Mauve.png"/>
+                </controls:Tile.Background>
+            </controls:Tile>
+            <!-- EndRegion -->
+            <!-- Region Olive... -->
+            <controls:Tile x:Name="Tile13" Click="AccentTile_Click" Width="20" Height="20" x:Uid="12" ToolTip="Olive">
+                <controls:Tile.Background>
+                    <ImageBrush ImageSource="/Resources/ColourTiles/Olive.png"/>
+                </controls:Tile.Background>
+            </controls:Tile>
+            <!-- EndRegion -->
+            <!-- Region Orange... -->
+            <controls:Tile x:Name="Tile14" Click="AccentTile_Click" Width="20" Height="20" x:Uid="13" ToolTip="Orange">
+                <controls:Tile.Background>
+                    <ImageBrush ImageSource="/Resources/ColourTiles/Orange.png"/>
+                </controls:Tile.Background>
+            </controls:Tile>
+            <!-- EndRegion -->
+            <!-- Region Pink... -->
+            <controls:Tile x:Name="Tile15" Click="AccentTile_Click" Width="20" Height="20" x:Uid="14" ToolTip="Pink">
+                <controls:Tile.Background>
+                    <ImageBrush ImageSource="/Resources/ColourTiles/Pink.png"/>
+                </controls:Tile.Background>
+            </controls:Tile>
+            <!-- EndRegion -->
+            <!-- Region Purple... -->
+            <controls:Tile x:Name="Tile16" Click="AccentTile_Click" Width="20" Height="20" x:Uid="15" ToolTip="Purple">
+                <controls:Tile.Background>
+                    <ImageBrush ImageSource="/Resources/ColourTiles/Purple.png"/>
+                </controls:Tile.Background>
+            </controls:Tile>
+            <!-- EndRegion -->
+            <!-- Region Red... -->
+            <controls:Tile x:Name="Tile17" Click="AccentTile_Click" Width="20" Height="20" x:Uid="16" ToolTip="Red">
+                <controls:Tile.Background>
+                    <ImageBrush ImageSource="/Resources/ColourTiles/Red.png"/>
+                </controls:Tile.Background>
+            </controls:Tile>
+            <!-- EndRegion -->
+            <!-- Region Sienna... -->
+            <controls:Tile x:Name="Tile18" Click="AccentTile_Click" Width="20" Height="20" x:Uid="17" ToolTip="Sienna">
+                <controls:Tile.Background>
+                    <ImageBrush ImageSource="/Resources/ColourTiles/Sienna.png"/>
+                </controls:Tile.Background>
+            </controls:Tile>
+            <!-- EndRegion -->
+            <!-- Region Steel... -->
+            <controls:Tile x:Name="Tile19" Click="AccentTile_Click" Width="20" Height="20" x:Uid="18" ToolTip="Steel">
+                <controls:Tile.Background>
+                    <ImageBrush ImageSource="/Resources/ColourTiles/Steel.png"/>
+                </controls:Tile.Background>
+            </controls:Tile>
+            <!-- EndRegion -->
+            <!-- Region Taupe... -->
+            <controls:Tile x:Name="Tile20" Click="AccentTile_Click" Width="20" Height="20" x:Uid="19" ToolTip="Taupe">
+                <controls:Tile.Background>
+                    <ImageBrush ImageSource="/Resources/ColourTiles/Taupe.png"/>
+                </controls:Tile.Background>
+            </controls:Tile>
+            <!-- EndRegion -->
+            <!-- Region Teal... -->
+            <controls:Tile x:Name="Tile21" Click="AccentTile_Click" Width="20" Height="20" x:Uid="20" ToolTip="Teal">
+                <controls:Tile.Background>
+                    <ImageBrush ImageSource="/Resources/ColourTiles/Teal.png"/>
+                </controls:Tile.Background>
+            </controls:Tile>
+            <!-- EndRegion -->
+            <!-- Region Violet... -->
+            <controls:Tile x:Name="Tile22" Click="AccentTile_Click" Width="20" Height="20" x:Uid="21" ToolTip="Violet">
+                <controls:Tile.Background>
+                    <ImageBrush ImageSource="/Resources/ColourTiles/Violet.png"/>
+                </controls:Tile.Background>
+            </controls:Tile>
+            <!-- EndRegion -->
+            <!-- Region Yellow... -->
+            <controls:Tile x:Name="Tile23" Click="AccentTile_Click" Width="20" Height="20" x:Uid="22" ToolTip="Yellow">
+                <controls:Tile.Background>
+                    <ImageBrush ImageSource="/Resources/ColourTiles/Yellow.png"/>
+                </controls:Tile.Background>
+            </controls:Tile>
+            <!-- EndRegion -->
+        </WrapPanel>
+        <!-- EndRegion -->
+        <!-- EndRegion -->
+
+        <Separator HorizontalAlignment="Left" Height="10" Width="240" Margin="10,15,10,7.5"/>
+
+        <!-- Region Notification settings... -->
+        <!-- Notification settings header... --><TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Notification Settings" FontSize="20" Foreground="Black" Width="240" Height="30" Background="#FFF300FF" Margin="10,7.5"/>
+        <!-- Region Toasts... -->
+        <!-- Toasts header... --><TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Toasts" FontSize="14" Foreground="Black" Width="240" Height="20" Background="#FFF300FF" Margin="10,0,10,2.5"/>
+        <!-- Toasts toggle switch... --><controls:ToggleSwitch x:Name="ToastToggle" HorizontalAlignment="Left" FontSize="14" FontFamily="Segoe UI" ToolTip="Toggle toast notifications" Width="90" Height="30" Foreground="Black" BorderThickness="0" Checked="ToastToggle_Checked" IsCheckedChanged="ToastToggle_IsCheckedChanged" Margin="10,2.5,0,0"/>
+        <!-- end region-->
+        <!-- end region-->
+
+        <!-- Version info... -->
+        <TextBlock x:Name="VersionText" TextAlignment="Center" Foreground="Black" Height="20" Margin="10,243,10,0"><Run Text="** Version text goes here **"/></TextBlock>
+
+    </StackPanel>
+    <!-- end region-->
+
+</controls:Flyout>
